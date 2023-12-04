@@ -48,36 +48,40 @@ export default {
 
 <template>
     <div class="jumbotron jumbotron-fluid ">
+        <button @click="decreaseImgNum">prev</button>
 
-        <div class="container bg d-flex justify-content-between align-items-center" :class="controlImgNum()">
-
-            <button @click="decreaseImgNum">prev</button>
-            <div>
-                <img :src="getImagePath(imgNum)" alt="">
-            </div>
-            <button @click="incrementImgNum">next</button>
+        <div class="container" :class="controlImgNum()">
+            <img :src="getImagePath(imgNum)" alt="">
         </div>
+
+        <button @click="incrementImgNum">next</button>
     </div>
 </template>
 
 <style scoped lang="scss">
 @use "../style/partials/variables" as*;
+@use "../style/partials/mixin" as*;
 
 .jumbotron {
     background-color: $bg-Nav-Bar;
+    @include flex;
 
-    .bg {
+    .container {
         background-repeat: no-repeat;
         background-position: center;
         background-size: 60%;
+        @include flex;
+
+            img {
+                width: 20%;
+                margin: 50px auto;
+            }
+     
     }
 }
 
 
-img {
-    width: 80%;
-    margin: 50px 0;
-}
+
 
 .crust {
     background-image: url(../assets/img/h3-rev-img-1.png);
@@ -89,4 +93,5 @@ img {
 
 .urban {
     background-image: url(../assets/img/h3-rev-img-5.png);
-}</style>
+}
+</style>

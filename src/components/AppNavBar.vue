@@ -13,45 +13,83 @@ export default {
 </script>
 
 <template>
-    <div class="hero d-flex justify-content-center">
-        <div class="my_nav-bar container d-flex justify-content-between align-items-center">
-            <button type="button" class="my_button btn btn-warning d-inline-block">ORDER ONLINE</button>
-            <div class="my_list d-flex justify-content-center align-items-center ">
-                <img class="my_icon_svg" src="../assets/svg/svg-0.svg" alt="">
-                <AppList :navList="navListHome"></AppList>
-                <img class="my_logo w-25 m-4" src="../assets/img/h5-logo-divided-header.png" alt="Logo Don Peppe">
+    <div class="hero ">
+        <div class="my_nav-bar container">
+
+            <button type="button" class="my_button">ORDER ONLINE</button>
+
+            <div class="my_list">
+                <div class="my_home">
+                    <img class="my_icon_svg" src="../assets/svg/svg-0.svg" alt="">
+                    <AppList :navList="navListHome"></AppList>
+                </div>
+                <img class="my_logo" src="../assets/img/h5-logo-divided-header.png" alt="Logo Don Peppe">
                 <AppList :navList="navListEvent"></AppList>
             </div>
-            <div class="d-flex flex-nowrap gap-2">
-                <div class="d-flex align-items-center">
-                    <img class="my_icon_svg"  src="../assets/svg/svg-1.svg" alt="">
-                    <span>CART</span>   
+
+            <div class="my_search">
+                <div>
+                    <img class="my_icon_svg" src="../assets/svg/svg-1.svg" alt="">
+                    <span>CART</span>
                 </div>
-                <div class="d-flex align-items-center">
-                    <img class="my_icon_svg"  src="../assets/svg/loupe-svgrepo-com.svg" alt="">
+                <div>
+                    <img class="my_icon_svg" src="../assets/svg/loupe-svgrepo-com.svg" alt="">
                     <span>SEARCH</span>
                 </div>
             </div>
+
         </div>
     </div>
 </template>
 
 <style scoped lang="scss">
 @use "../style/partials/variables" as*;
+@use "../style/partials/mixin" as*;
 
 .hero {
     background-color: $bg-Nav-Bar;
     color: $color-text-white;
 
-    .my_button {
-        height: fit-content;
-        padding: 5px 20px;
-        border-radius: 0px;
-        color: inherit;
-        border: none;
-        background-color: $bg-button;
-        font-size: .6rem;
-    };
+    .container {
+        @include flex;
+
+        .my_button {
+            height: fit-content;
+            padding: 5px 20px;
+            border-radius: 0px;
+            color: inherit;
+            border: none;
+            background-color: $bg-button;
+            font-size: .6rem;
+        }
+
+        .my_list {
+            @include flex;
+
+            .my_home {
+                @include flex;
+            }
+
+
+            .my_logo {
+                width: 25%;
+            }
+        }
+
+        .my_search {
+            @include flex;
+            gap: 10px;
+
+            div {
+                @include flex;
+                gap: 5px
+            }
+        }
+    }
+
+
+
+    ;
 
     .my_icon_svg {
         max-width: 1rem;
