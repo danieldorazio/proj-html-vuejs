@@ -1,7 +1,18 @@
-<script></script>
+<script>
+import AppListOfImages from './AppListOfImages.vue';
+
+export default {
+    data() {
+        return {
+
+        }
+    },
+    components: {AppListOfImages}
+}
+</script>
 
 <template>
-    <div>Main</div>
+    <AppListOfImages></AppListOfImages>
 </template>
 
 <style  scoped lang="scss"></style>
