@@ -3,13 +3,7 @@ export default {
     props: {
         navList: Array,
     },
-    data() {
-        return {
-
-        }
-    },
 }
-
 </script>
 
 <template>
