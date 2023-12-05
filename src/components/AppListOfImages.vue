@@ -9,6 +9,8 @@ export default {
         dynamicStyleSelector: function (array) {
             if (array.includes("h3-img-1.jpg")) {
                 return 'img-new-place'
+            } if(array.includes("h1-team-1a-700x700.jpg")) {
+                return 'img-team'
             }
 
         }
@@ -62,6 +64,14 @@ export default {
             }
         }
     }
+}
 
+//style "h1-team-1a-700x700.jpg"
+.img-team {
+   img {
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 1;
+   }
 }
 </style>

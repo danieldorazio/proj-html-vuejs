@@ -22,6 +22,7 @@ export default {
 
 .bunner {
     position: relative;
+    margin: 10px 0;
     .row {
         @include flex;
         flex-wrap: wrap;
@@ -32,41 +33,41 @@ export default {
         .col-5,
         .col-6,
         .col-8 {
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
 
             img {
                 object-fit: none;
-                height: 100px;
+                height: 50px;
             }
         }
 
         .col-3,
         .col-5 {
-            height: 200px;
+            height: 100px;
             img {
                 object-fit: none;
-                height: 200px;
+                height: 100px;
             }
         }
 
         .col-1,
         .col-4,
         .col-7 {
-            width: calc(100% - 200px);
-            height: 100px;
+            width: calc(100% - 100px);
+            height: 50px;
 
             img {
                 object-fit: none;
-                height: 100px;
+                height: 50px;
                 width:100% ;
             }
         }
 
         .col-4 {
-            height: 200px;
+            height: 100px;
             img {
-                height: 200px;
+                height: 100px;
                 object-position: 10%;
             }
         }
@@ -75,10 +76,11 @@ export default {
 
 h2 {
     color: white;
-    width: 10%;
+    font-size: 1rem;
+    width: 20%;
     position: absolute;
-    top: 26%;
-    right: 82%;
+    top: 30%;
+    right: 68%;
 }
 
 }

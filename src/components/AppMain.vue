@@ -33,7 +33,8 @@ export default {
                         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
                     },
                 ]
-            }
+            },
+            imgTeam: ['h1-team-1a-700x700.jpg', 'h1-team-2a.jpg', 'h1-team-4a.jpg', 'h1-team-3a.jpg']
         }
     },
 
@@ -51,6 +52,7 @@ export default {
     </AppJumbotron>
     <AppCardList :imgFirstSrc="getImagePath('h1-img-4.jpg')" :imgSecondSrc="getImagePath('h1-img-7n.png')" :specialList="specials"></AppCardList>
     <AppAadvertisingBurren :imgSrc="getImagePath('h3-background-img.jpg')"></AppAadvertisingBurren>
+    <AppListOfImages :imgSrc="imgTeam"></AppListOfImages>
 </template>
 
 <style  scoped lang="scss"></style>
