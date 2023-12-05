@@ -11,6 +11,8 @@ export default {
                 return 'img-new-place'
             } if(array.includes("h1-team-1a-700x700.jpg")) {
                 return 'img-team'
+            } if(array.includes("h1-clients-img-1.png")) {
+                return 'img-clients'
             }
 
         }
@@ -73,5 +75,15 @@ export default {
     max-width: 700px;
     aspect-ratio: 1;
    }
+}
+
+//style "h1-clients-img-1.png"
+.img-clients {
+    padding: 20px 0;
+    background-color: $bg-clients;
+    @include flex (row, center, center);
+    .col {
+        width: calc(100% / 6);
+    }
 }
 </style>

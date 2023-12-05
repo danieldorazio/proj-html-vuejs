@@ -34,7 +34,8 @@ export default {
                     },
                 ]
             },
-            imgTeam: ['h1-team-1a-700x700.jpg', 'h1-team-2a.jpg', 'h1-team-4a.jpg', 'h1-team-3a.jpg']
+            imgTeam: ['h1-team-1a-700x700.jpg', 'h1-team-2a.jpg', 'h1-team-4a.jpg', 'h1-team-3a.jpg'],
+            imgClients: ['h1-clients-img-4.png', 'h1-clients-img-3.png', 'h1-clients-img-1.png', 'h1-clients-img-2.png', 'h1-clients-img-5.png']
         }
     },
 
@@ -53,6 +54,7 @@ export default {
     <AppCardList :imgFirstSrc="getImagePath('h1-img-4.jpg')" :imgSecondSrc="getImagePath('h1-img-7n.png')" :specialList="specials"></AppCardList>
     <AppAadvertisingBurren :imgSrc="getImagePath('h3-background-img.jpg')"></AppAadvertisingBurren>
     <AppListOfImages :imgSrc="imgTeam"></AppListOfImages>
+    <AppListOfImages :imgSrc="imgClients"></AppListOfImages>
 </template>
 
 <style  scoped lang="scss"></style>
