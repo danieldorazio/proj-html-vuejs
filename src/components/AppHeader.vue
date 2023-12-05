@@ -3,7 +3,7 @@ import AppNavBar from "./AppNavBar.vue";
 import AppJumbotron from "./AppJumbotron.vue";
 
 export default {
-    components: { AppNavBar, AppJumbotron},
+    components: { AppNavBar, AppJumbotron },
 
     data() {
         return {
@@ -19,7 +19,7 @@ export default {
         incrementImgNum: function () {
             if (this.imgUpperNum != 6 && this.imgBackGroundNum != 5) {
                 this.imgUpperNum = this.imgUpperNum + 2;
-                this.imgBackGroundNum = this.imgBackGroundNum +2;
+                this.imgBackGroundNum = this.imgBackGroundNum + 2;
 
             } else {
                 this.imgUpperNum = 2
@@ -31,14 +31,14 @@ export default {
         decreaseImgNum: function () {
             if (this.imgUpperNum != 2 && this.imgBackGroundNum != 1) {
                 this.imgUpperNum = this.imgUpperNum - 2;
-                this.imgBackGroundNum = this.imgBackGroundNum -2;
+                this.imgBackGroundNum = this.imgBackGroundNum - 2;
 
             } else {
                 this.imgUpperNum = 6
                 this.imgBackGroundNum = 5
 
             }
-        },        
+        },
     },
 }
 </script>
@@ -47,10 +47,11 @@ export default {
     <section class="header">
         <AppNavBar></AppNavBar>
         <AppJumbotron 
-        :imgUpperSrc="getImagePath(imgUpperNum)" 
-        :imgBackGroundSrc="getImagePath(imgBackGroundNum)"  
-        @prevButtonClicked="decreaseImgNum()" 
-        @nextButtonClicked="incrementImgNum()" ></AppJumbotron>
+            :imgUpperSrc="getImagePath(imgUpperNum)" 
+            :imgBackGroundSrc="getImagePath(imgBackGroundNum)"
+            @prevButtonClicked="decreaseImgNum()" 
+            @nextButtonClicked="incrementImgNum()">
+        </AppJumbotron>
     </section>
 </template>
 
