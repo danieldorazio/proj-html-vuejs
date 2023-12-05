@@ -3,6 +3,7 @@ export default {
     props: {
         imgUpperSrc: String,
         imgBackGroundSrc: String,
+        phraseTestimonials: Array,
     },
 
     data() {
@@ -12,6 +13,17 @@ export default {
     },
 
     methods: {
+        dynamicStyleSelector: function (String) {
+            if (String.includes("h3-rev-img-2.png")) {
+                return 'img-pizza'
+            } if (String.includes("h3-rev-img-4.png")) {
+                return 'img-pizza'
+            } if (String.includes("h3-rev-img-6.png")) {
+                return 'img-pizza'
+            } if (String.includes("h3-testimonials-bckgrnd.jpg"))
+                return 'img-testimonials'
+        }
+
     },
 
 }
@@ -19,13 +31,19 @@ export default {
 </script>
 
 <template>
-    <div class="jumbotron jumbotron-fluid ">
+    <div class="jumbotron" :class="dynamicStyleSelector(imgUpperSrc)">
+        <!--:class="[dynamicStyleSelector(imgUpperSrc), dynamicStyleSelector(imgBackGroundSrc)]" -->
         <button @click="$emit('prevButtonClicked')">prev</button>
 
-        <div class="container"> 
+        <div class="container">
             <img class="back-ground" :src="imgBackGroundSrc" alt="">
             <img class="img-upper" :src="imgUpperSrc" alt="">
+
+            <div class="phrase-testimonials">
+                <div v-for="(element, index) in phraseTestimonials" :class="`phrase-${index}`"> {{ element }} </div>
+            </div>
         </div>
+
 
         <button @click="$emit('nextButtonClicked')">next</button>
     </div>
@@ -36,8 +54,19 @@ export default {
 @use "../style/partials/mixin" as*;
 
 .jumbotron {
-    background-color: $bg-Nav-Bar;
     @include flex;
+
+    .back-ground {
+        display: none;
+    }
+
+    .phrase-testimonials {
+        display: none;
+    }
+}
+
+.img-pizza {
+    background-color: $bg-Nav-Bar;
 
     .container {
         background-repeat: no-repeat;
@@ -47,6 +76,7 @@ export default {
         position: relative;
 
         .back-ground {
+            display: block;
             width: 50%;
             position: absolute;
             left: 25%;
@@ -60,7 +90,44 @@ export default {
             width: 20%;
             margin: 50px auto;
         }
-
     }
 }
-</style>
+
+.img-testimonials {
+    .container {
+        position: relative;
+
+        
+        .phrase-testimonials {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            text-align: center;
+
+            .phrase-0 {
+                display: inline-block;
+                font-size: 5rem;
+                font-weight: bold;
+                color: $color-text-phrase-0;
+            }
+
+            .phrase-1 {
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            .phrase-2 {
+                color: $color-text-phrase-2;
+                font-size: .8rem;
+                font-weight: 600;
+            }
+
+
+        }
+    }
+
+
+}</style>

@@ -3,7 +3,7 @@ import AppNavBar from "./AppNavBar.vue";
 import AppJumbotron from "./AppJumbotron.vue";
 
 export default {
-    components: { AppNavBar, AppJumbotron, },
+    components: { AppNavBar, AppJumbotron},
 
     data() {
         return {
