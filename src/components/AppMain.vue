@@ -2,9 +2,10 @@
 import AppListOfImages from './AppListOfImages.vue';
 import AppJumbotron from './AppJumbotron.vue';
 import AppCardList from './AppCardList.vue';
+import AppAadvertisingBurren from './AppAadvertisingBurren.vue';
 
 export default {
-    components: { AppListOfImages, AppJumbotron, AppCardList, },
+    components: { AppListOfImages, AppJumbotron, AppCardList, AppAadvertisingBurren },
 
     data() {
         return {
@@ -48,8 +49,8 @@ export default {
     <AppListOfImages :imgSrc="imgNewPlace"></AppListOfImages>
     <AppJumbotron :imgUpperSrc="getImagePath('h3-testimonials-bckgrnd.jpg')" :phraseTestimonials="phraseTestimonials">
     </AppJumbotron>
-    <AppCardList :imgFirstSrc="getImagePath('h1-img-4.jpg')" :imgSecondSrc="getImagePath('h1-img-7n.png')"
-        :specialList="specials"></AppCardList>
+    <AppCardList :imgFirstSrc="getImagePath('h1-img-4.jpg')" :imgSecondSrc="getImagePath('h1-img-7n.png')" :specialList="specials"></AppCardList>
+    <AppAadvertisingBurren :imgSrc="getImagePath('h3-background-img.jpg')"></AppAadvertisingBurren>
 </template>
 
 <style  scoped lang="scss"></style>
