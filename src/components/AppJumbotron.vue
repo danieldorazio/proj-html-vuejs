@@ -1,45 +1,17 @@
 <script>
 export default {
+    props: {
+        imgUpperSrc: String,
+        imgBackGroundSrc: String,
+    },
 
     data() {
         return {
-            imgNum: 2,
+
         }
     },
+
     methods: {
-        getImagePath: function (img) {
-            return new URL(`../assets/img/h3-rev-img-${img}.png`, import.meta.url).href;
-        },
-
-        incrementImgNum: function () {
-            if (this.imgNum != 6) {
-                this.imgNum = this.imgNum + 2;
-
-            } else {
-                this.imgNum = 2
-
-            }
-        },
-
-        decreaseImgNum: function () {
-            if (this.imgNum != 2) {
-                this.imgNum = this.imgNum - 2;
-
-            } else {
-                this.imgNum = 6
-
-            }
-        },
-
-        controlImgNum: function () {
-            if (this.imgNum === 2) {
-                return `crust`
-            } else if (this.imgNum === 4) {
-                return `taste`
-            } else if (this.imgNum === 6) {
-                return `urban`
-            }
-        },
     },
 
 }
@@ -48,13 +20,14 @@ export default {
 
 <template>
     <div class="jumbotron jumbotron-fluid ">
-        <button @click="decreaseImgNum">prev</button>
+        <button @click="$emit('prevButtonClicked')">prev</button>
 
-        <div class="container" :class="controlImgNum()">
-            <img :src="getImagePath(imgNum)" alt="">
+        <div class="container"> 
+            <img class="back-ground" :src="imgBackGroundSrc" alt="">
+            <img class="img-upper" :src="imgUpperSrc" alt="">
         </div>
 
-        <button @click="incrementImgNum">next</button>
+        <button @click="$emit('nextButtonClicked')">next</button>
     </div>
 </template>
 
@@ -71,27 +44,23 @@ export default {
         background-position: center;
         background-size: 60%;
         @include flex;
+        position: relative;
 
-            img {
-                width: 20%;
-                margin: 50px auto;
-            }
-     
+        .back-ground {
+            width: 50%;
+            position: absolute;
+            left: 25%;
+            bottom: 25%;
+            // transform: translate(50% 50%);
+        }
+
+        .img-upper {
+            position: relative;
+            z-index: 2;
+            width: 20%;
+            margin: 50px auto;
+        }
+
     }
-}
-
-
-
-
-.crust {
-    background-image: url(../assets/img/h3-rev-img-1.png);
-}
-
-.taste {
-    background-image: url(../assets/img/h3-rev-img-3.png);
-}
-
-.urban {
-    background-image: url(../assets/img/h3-rev-img-5.png);
 }
 </style>
