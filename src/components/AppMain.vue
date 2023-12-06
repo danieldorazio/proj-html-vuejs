@@ -5,32 +5,34 @@ import AppCardList from './AppCardList.vue';
 import AppAdvertisingBurren from './AppAdvertisingBurren.vue';
 import AppPhrase from './AppPhrase.vue';
 import AppCarosel from './AppCarosel.vue';
+import AppForm from './AppForm.vue';
 
 export default {
-    components: { AppListOfImages, AppJumbotron, AppCardList, AppAdvertisingBurren, AppPhrase, AppCarosel },
+    components: { AppListOfImages, AppJumbotron, AppCardList, AppAdvertisingBurren, AppPhrase, AppCarosel, AppForm },
 
     data() {
         return {
             imgNewPlace: ['h3-img-1.jpg', 'h3-img-2.jpg', 'h3-img-3.jpg', 'h3-img-4.jpg'],
             phraseTestimonials: ["“", "FORGHET THE TRANDY PIZZA SHOPS, THIS HIDDEN SPOT MAKES THE BEST NEW YORK-STYLE PIZZA SLICE IN NAPLES", "WASHINGTON POST 2018"],
             specials: {
+                id: "specials",
                 title: "SPECIALS*",
                 titleParagraph: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                combo: [
+                elem: [
                     {
-                        price: "$10",
+                        number: "$10",
                         name: "COMBO PICCOLO",
                         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
                     },
 
                     {
-                        price: "$20",
+                        number: "$20",
                         name: "COMBO MEZZO",
                         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
                     },
 
                     {
-                        price: "$30",
+                        number: "$30",
                         name: "COMBO GRANDE",
                         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
                     },
@@ -70,7 +72,31 @@ export default {
                     pizzaName: 'VALDOSTANA',
                     pizzaPrice: '$55.00',
                 },
-            ]
+            ],
+            eventList: {
+                id: "eventList",
+                title: "MADE WITH LOVE ",
+                titleParagraph: "DELISH PIZZA DEALS",
+                elem: [
+                    {
+                        number: "02 NOV",
+                        name: "TRADITIONAL NEAPOLITAN PIES IN KYOTO PIZZA MERCATO",
+                        description: "204 E. Pizzetta Tommaso"
+                    },
+                    {
+                        number: "03 NOV",
+                        name: "TERAZZA PATIO DINING SPACE OPENING THIS WEEKEND",
+                        description: "204 E. Pizzetta Tommaso"
+                    },
+                    {
+                        number: "05 NOV",
+                        name: "SIENNA PRIVATE DINING ROOM WITH STE'PHANE BRUNN",
+                        description: "204 E. Pizzetta Tommaso"
+                    },
+                ]
+
+
+            }
         }
     },
 
@@ -93,6 +119,9 @@ export default {
     <AppListOfImages :imgSrc="imgClients"></AppListOfImages>
     <AppPhrase :phrase="phrasePizzaMenu"></AppPhrase>
     <AppCarosel :arrayImg="imgChoosePizza"></AppCarosel>
+    <AppCardList :imgFirstSrc="getImagePath('h3-img-5a.jpg')" :imgSecondSrc="getImagePath('h1-img-7n.png')"
+        :specialList="eventList"></AppCardList>
+    <AppForm></AppForm>
 </template>
 
 <style  scoped lang="scss"></style>
