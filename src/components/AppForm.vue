@@ -58,52 +58,53 @@ export default {
     background-image: url(../assets/img/h3-background-img-3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    margin: 10px 0;
     padding: 100px 0;
 
-}
-
-.form {
-    @include flex;
-    flex-wrap: wrap;
 
 
-    .element {
+    .form {
         @include flex;
-        width: calc(100% / 4);
-
-        .input {
-            background-color: white;
-            border: 1px solid black;
-            padding: 10px;
+        flex-wrap: wrap;
+        .element {
             @include flex;
+            width: calc(100% / 4);
 
-            input {
-                width: 80%;
-                border: none;
+            .input {
+                background-color: white;
+                border: 1px solid black;
+                padding: 10px;
+                @include flex;
 
+                input {
+                    width: 80%;
+                    border: none;
+
+                }
+
+                img {
+                    width: 15px;
+                }
             }
 
-            img {
-                width: 15px;
+            .space {
+                color: white;
+                margin: 0 5px;
             }
         }
 
-        .space {
+        button {
+            font-size: .8rem;
+            background-color: $bg-button-form;
             color: white;
-            margin: 0 5px;
+            border: none;
+            padding: 10px 20px;
         }
     }
 
-    button {
+    p {
         font-size: .8rem;
-        background-color: $bg-button-form;
         color: white;
-        border: none;
-        padding: 10px 20px;
     }
 }
-
-p {
-    font-size: .8rem;
-    color: white;
-}</style>
+</style>
