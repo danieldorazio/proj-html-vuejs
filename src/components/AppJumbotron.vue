@@ -1,5 +1,7 @@
 <script>
 export default {
+
+
     props: {
         imgUpperSrc: String,
         imgBackGroundSrc: String,
@@ -94,6 +96,8 @@ export default {
 }
 
 .img-testimonials {
+
+background-color: $bg-img-testimonials;
     .container {
         position: relative;
 

@@ -14,7 +14,6 @@ export default {
             } if(array.includes("h1-clients-img-1.png")) {
                 return 'img-clients'
             }
-
         }
     }
 }

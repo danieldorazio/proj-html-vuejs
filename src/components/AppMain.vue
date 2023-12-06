@@ -2,10 +2,11 @@
 import AppListOfImages from './AppListOfImages.vue';
 import AppJumbotron from './AppJumbotron.vue';
 import AppCardList from './AppCardList.vue';
-import AppAadvertisingBurren from './AppAadvertisingBurren.vue';
+import AppAdvertisingBurren from './AppAdvertisingBurren.vue';
+import AppPhrase from './AppPhrase.vue';
 
 export default {
-    components: { AppListOfImages, AppJumbotron, AppCardList, AppAadvertisingBurren },
+    components: { AppListOfImages, AppJumbotron, AppCardList, AppAdvertisingBurren, AppPhrase},
 
     data() {
         return {
@@ -35,7 +36,8 @@ export default {
                 ]
             },
             imgTeam: ['h1-team-1a-700x700.jpg', 'h1-team-2a.jpg', 'h1-team-4a.jpg', 'h1-team-3a.jpg'],
-            imgClients: ['h1-clients-img-4.png', 'h1-clients-img-3.png', 'h1-clients-img-1.png', 'h1-clients-img-2.png', 'h1-clients-img-5.png']
+            imgClients: ['h1-clients-img-4.png', 'h1-clients-img-3.png', 'h1-clients-img-1.png', 'h1-clients-img-2.png', 'h1-clients-img-5.png'],
+            phrasePizzaMenu: ['CHOOSE YOUR FLAVOR', 'THE BEST PIZZA MENU IN TOWN', 'lorem ipsum dolor si amet'],
         }
     },
 
@@ -52,9 +54,10 @@ export default {
     <AppJumbotron :imgUpperSrc="getImagePath('h3-testimonials-bckgrnd.jpg')" :phraseTestimonials="phraseTestimonials">
     </AppJumbotron>
     <AppCardList :imgFirstSrc="getImagePath('h1-img-4.jpg')" :imgSecondSrc="getImagePath('h1-img-7n.png')" :specialList="specials"></AppCardList>
-    <AppAadvertisingBurren :imgSrc="getImagePath('h3-background-img.jpg')"></AppAadvertisingBurren>
+    <AppAdvertisingBurren :imgSrc="getImagePath('h3-background-img.jpg')"></AppAdvertisingBurren>
     <AppListOfImages :imgSrc="imgTeam"></AppListOfImages>
     <AppListOfImages :imgSrc="imgClients"></AppListOfImages>
+    <AppPhrase :phrase="phrasePizzaMenu"></AppPhrase>
 </template>
 
 <style  scoped lang="scss"></style>
